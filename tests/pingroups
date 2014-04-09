@@ -1,0 +1,72 @@
+registered pin groups:
+group: pinmux_userled_pins
+pin 21 (44e10854)
+pin 22 (44e10858)
+pin 23 (44e1085c)
+pin 24 (44e10860)
+
+group: pinmux_rstctl_pins
+pin 20 (44e10850)
+
+group: pinmux_i2c0_pins
+pin 98 (44e10988)
+pin 99 (44e1098c)
+
+group: pinmux_i2c2_pins
+pin 94 (44e10978)
+pin 95 (44e1097c)
+
+group: pinmux_mmc1_pins
+pin 88 (44e10960)
+
+group: pinmux_emmc2_pins
+pin 32 (44e10880)
+pin 33 (44e10884)
+pin 0 (44e10800)
+pin 1 (44e10804)
+pin 2 (44e10808)
+pin 3 (44e1080c)
+pin 4 (44e10810)
+pin 5 (44e10814)
+pin 6 (44e10818)
+pin 7 (44e1081c)
+
+group: pinmux_userled_pins
+pin 21 (44e10854)
+pin 22 (44e10858)
+pin 23 (44e1085c)
+pin 24 (44e10860)
+
+group: mcasp0_pins
+pin 107 (44e109ac)
+pin 103 (44e1099c)
+pin 101 (44e10994)
+pin 100 (44e10990)
+pin 106 (44e109a8)
+
+group: nxp_hdmi_bonelt_pins
+pin 108 (44e109b0)
+pin 40 (44e108a0)
+pin 41 (44e108a4)
+pin 42 (44e108a8)
+pin 43 (44e108ac)
+pin 44 (44e108b0)
+pin 45 (44e108b4)
+pin 46 (44e108b8)
+pin 47 (44e108bc)
+pin 48 (44e108c0)
+pin 49 (44e108c4)
+pin 50 (44e108c8)
+pin 51 (44e108cc)
+pin 52 (44e108d0)
+pin 53 (44e108d4)
+pin 54 (44e108d8)
+pin 55 (44e108dc)
+pin 56 (44e108e0)
+pin 57 (44e108e4)
+pin 58 (44e108e8)
+pin 59 (44e108ec)
+
+group: nxp_hdmi_bonelt_off_pins
+pin 108 (44e109b0)
+

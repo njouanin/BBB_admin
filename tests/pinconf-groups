@@ -1,0 +1,12 @@
+Pin config settings per pin group
+Format: group (name): configs
+0 (pinmux_userled_pins):
+1 (pinmux_rstctl_pins):
+2 (pinmux_i2c0_pins):
+3 (pinmux_i2c2_pins):
+4 (pinmux_mmc1_pins):
+5 (pinmux_emmc2_pins):
+6 (pinmux_userled_pins):
+7 (mcasp0_pins):
+8 (nxp_hdmi_bonelt_pins):
+9 (nxp_hdmi_bonelt_off_pins):
