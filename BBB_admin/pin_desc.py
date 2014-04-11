@@ -1,4 +1,4 @@
-control_module_addr=0x44e10000
+BBB_control_module_addr=0x44e10000
 
 ############################################################################
 # P8 header definition
@@ -17,7 +17,7 @@ control_module_addr=0x44e10000
 #   - notes
 #
 ############################################################################
-P8_DEF = [
+BBB_P8_DEF = [
 	{
 		'head_pin':1, 
 		'head_name': 'GND', 
@@ -624,7 +624,7 @@ P8_DEF = [
 # See P8 comment over for array description
 #
 ############################################################################
-P9_DEF = [
+BBB_P9_DEF = [
 	{
 		'head_pin':1, 
 		'head_name': 'GND', 
