@@ -1,0 +1,64 @@
+{{ systemInfo2 }}
+
+<div class="panel panel-default" ng-controller="SystemUnameCtrl">
+  <div class="panel-heading">System summary</div>
+  <div class="panel-body">
+{{ systemInfo }}
+  </div>
+</div>
+
+<div ng-controller="NetIfacesCtrl">
+    <ul class="nav nav-tabs">
+        <li ng-class="{active:$first}" ng-repeat="interface in network.interfaces">
+            <a href="#{{interface.name}}" data-toggle="tab">{{interface.name}}</a>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+        <div ng-class="{tab-pane fade;in active:$first}" id="{{interface.name}}" ng-repeat="interface in network.interfaces">
+      	<table class="table">
+            <thead>
+                <th>Protocol</th>
+                <th>Address</th>
+                <th>Peer</th>
+                <th>Netmask</th>
+                <th>Broadcast</th>
+            </thead>
+            <tbody>
+                <tr ng-repeat="address in interface.addresses">
+                    <td>{{address.protocol}}</td>
+                    <td>{{address.addr}}</td>
+                    <td>{{address.peer}}</td>
+                    <td>{{address.netmask}}</td>
+                    <td>{{address.broadcast}}</td>
+                </tr>
+            </tbody>
+      	</table>
+        </div>
+    </div>
+<!--
+    <div class="panel panel-default" ng-repeat="interface in network.interfaces">
+      <div class="panel-heading">{{interface.name}}</div>
+      <div class="panel-body">
+      	<table class="table">
+            <thead>
+                <th>Protocol</th>
+                <th>Address</th>
+                <th>Peer</th>
+                <th>Netmask</th>
+                <th>Broadcast</th>
+            </thead>
+            <tbody>
+                <tr ng-repeat="address in interface.addresses">
+                    <td>{{address.protocol}}</td>
+                    <td>{{address.addr}}</td>
+                    <td>{{address.peer}}</td>
+                    <td>{{address.netmask}}</td>
+                    <td>{{address.broadcast}}</td>
+                </tr>
+            </tbody>
+      	</table>
+      </div>
+    </div>
+-->
+</div>
