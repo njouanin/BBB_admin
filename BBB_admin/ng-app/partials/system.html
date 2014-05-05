@@ -8,35 +8,40 @@
 </div>
 
 <div ng-controller="NetIfacesCtrl">
-    <ul class="nav nav-tabs">
+    <tabset>
+        <tab ng-repeat="interface in network.interfaces" heading="{{interface.name}}">
+            <table class="table">
+                <thead>
+                    <th>Protocol</th>
+                    <th>Address</th>
+                    <th>Peer</th>
+                    <th>Netmask</th>
+                    <th>Broadcast</th>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="address in interface.addresses">
+                        <td>{{address.protocol}}</td>
+                        <td>{{address.addr}}</td>
+                        <td>{{address.peer}}</td>
+                        <td>{{address.netmask}}</td>
+                        <td>{{address.broadcast}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </tab>
+    </tabset>
+<!--
+
+    <ul id="NetIFacesTab" class="nav nav-tabs">
         <li ng-class="{active:$first}" ng-repeat="interface in network.interfaces">
             <a href="#{{interface.name}}" data-toggle="tab">{{interface.name}}</a>
         </li>
     </ul>
 
-    <div class="tab-content">
-        <div ng-class="{tab-pane fade;in active:$first}" id="{{interface.name}}" ng-repeat="interface in network.interfaces">
-      	<table class="table">
-            <thead>
-                <th>Protocol</th>
-                <th>Address</th>
-                <th>Peer</th>
-                <th>Netmask</th>
-                <th>Broadcast</th>
-            </thead>
-            <tbody>
-                <tr ng-repeat="address in interface.addresses">
-                    <td>{{address.protocol}}</td>
-                    <td>{{address.addr}}</td>
-                    <td>{{address.peer}}</td>
-                    <td>{{address.netmask}}</td>
-                    <td>{{address.broadcast}}</td>
-                </tr>
-            </tbody>
-      	</table>
+    <div id="NetIFacesTabContent" class="tab-content">
+        <div class="tab-pane fade" ng-class="{'active in':$first}" id="{{interface.name}}" ng-repeat="interface in network.interfaces">
         </div>
     </div>
-<!--
     <div class="panel panel-default" ng-repeat="interface in network.interfaces">
       <div class="panel-heading">{{interface.name}}</div>
       <div class="panel-body">

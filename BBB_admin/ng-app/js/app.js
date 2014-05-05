@@ -1,6 +1,7 @@
 var BBBAdminApp = angular.module('BBBAdminApp', [
   'ngRoute',
-  'BBBAdminControllers'
+  'BBBAdminControllers',
+  'ui.bootstrap'
 ]);
 
 BBBAdminApp.config(['$routeProvider',
