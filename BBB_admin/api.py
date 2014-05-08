@@ -23,7 +23,7 @@ def net_interfaces():
         try :
             addrs_ipv4 = addrs[socket.AF_INET]
             for addr in addrs_ipv4:
-                d = {'protocol': 'ipv4'}
+                d = {'family': 'ipv4'}
                 d.update(addr)
                 list_addresses.append(d)
         except Exception as e:
@@ -31,7 +31,7 @@ def net_interfaces():
         try :
             addrs_ipv6 = addrs[socket.AF_INET6]
             for addr in addrs_ipv6:
-                d = {'protocol': 'ipv6'}
+                d = {'family': 'ipv6'}
                 d.update(addr)
                 list_addresses.append(d)
         except Exception as e:
@@ -39,11 +39,11 @@ def net_interfaces():
         try :
             addrs_mac = addrs[socket.AF_LINK]
             for addr in addrs_mac:
-                d = {'protocol': 'mac'}
+                d = {'family': 'mac'}
                 d.update(addr)
                 list_addresses.append(d)
         except Exception as e:
             pass
         dict_interface['addresses'] = list_addresses
         list_interfaces.append(dict_interface)
-    return {'interfaces': list_interfaces }
+    return {'interfaces': list_interfaces , 'hostname': socket.gethostname()}
