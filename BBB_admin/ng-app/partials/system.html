@@ -8,21 +8,35 @@
                     <div class="col-sm-10">
                         <p class="form-control-static">{{systemInfo.sysname}}</p>
                     </div>
+                </div>
+                <div class="form-group">
                     <label class="col-sm-2 control-label">Node name</label>
                     <div class="col-sm-10">
                         <p class="form-control-static">{{systemInfo.nodename}}</p>
                     </div>
+                </div>
+                <div class="form-group">
                     <label class="col-sm-2 control-label">Release</label>
                     <div class="col-sm-10">
                         <p class="form-control-static">{{systemInfo.release}}</p>
                     </div>
+                </div>
+                <div class="form-group">
                     <label class="col-sm-2 control-label">Version</label>
                     <div class="col-sm-10">
                         <p class="form-control-static">{{systemInfo.version}}</p>
                     </div>
+                </div>
+                <div class="form-group">
                     <label class="col-sm-2 control-label">Machine</label>
                     <div class="col-sm-10">
                         <p class="form-control-static">{{systemInfo.machine}}</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Uptime</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static">{{uptime.uptime}}</p>
                     </div>
                 </div>
             </form>
@@ -41,7 +55,8 @@
                     <label class="col-sm-2 control-label">Network interfaces</label>
                     <div class="col-sm-10">
                         <tabset>
-                            <tab ng-repeat="interface in network.interfaces" heading="{{interface.name}} <span class=\"badge\">42</span>" fade="true">
+                            <tab ng-repeat="interface in network.interfaces" fade="true">
+                                <tab-heading>{{interface.name}} <span class="badge">{{interface.addresses.length}}</span></tab-heading>
                                 <table style="margin-top: 10px;" class="table table-condensed table-bordered" ng-if="interface.addresses.length">
                                     <thead>
                                         <th>Family</th>
