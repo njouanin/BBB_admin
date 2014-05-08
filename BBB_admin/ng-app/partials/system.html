@@ -2,33 +2,70 @@
     <div class="panel panel-default" ng-controller="SystemUnameCtrl">
         <div class="panel-heading">System summary</div>
         <div class="panel-body">
-            {{ systemInfo }}
+            <form class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">System name</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static">{{systemInfo.sysname}}</p>
+                    </div>
+                    <label class="col-sm-2 control-label">Node name</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static">{{systemInfo.nodename}}</p>
+                    </div>
+                    <label class="col-sm-2 control-label">Release</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static">{{systemInfo.release}}</p>
+                    </div>
+                    <label class="col-sm-2 control-label">Version</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static">{{systemInfo.version}}</p>
+                    </div>
+                    <label class="col-sm-2 control-label">Machine</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static">{{systemInfo.machine}}</p>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 
-    <div ng-controller="NetIfacesCtrl">
-        <tabset>
-            <tab ng-repeat="interface in network.interfaces" heading="{{interface.name}}" fade="true">
-                <table style="margin-top: 10px;" class="table table-condensed table-bordered" ng-if="interface.addresses.length">
-                    <thead>
-                        <th>Family</th>
-                        <th>Address</th>
-                        <th>Peer</th>
-                        <th>Netmask</th>
-                        <th>Broadcast</th>
-                    </thead>
-                    <tbody>
-                        <tr ng-repeat="address in interface.addresses">
-                            <td>{{address.family}}</td>
-                            <td><code>{{address.addr}}</code></td>
-                            <td><code>{{address.peer}}</code></td>
-                            <td><code>{{address.netmask}}</code></td>
-                            <td><code>{{address.broadcast}}</code></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div style="margin-top: 10px;" class="alert alert-info" ng-if="interface.addresses.length == 0">No address configured for interface '{{interface.name}}'.</div>
-            </tab>
-        </tabset>
+    <div class="panel panel-default" ng-controller="NetIfacesCtrl">
+        <div class="panel-heading">Network configuration</div>
+        <div class="panel-body">
+            <form class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Hostname</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static">{{network.hostname}}</p>
+                    </div>
+                    <label class="col-sm-2 control-label">Network interfaces</label>
+                    <div class="col-sm-10">
+                        <tabset>
+                            <tab ng-repeat="interface in network.interfaces" heading="{{interface.name}} <span class=\"badge\">42</span>" fade="true">
+                                <table style="margin-top: 10px;" class="table table-condensed table-bordered" ng-if="interface.addresses.length">
+                                    <thead>
+                                        <th>Family</th>
+                                        <th>Address</th>
+                                        <th>Peer</th>
+                                        <th>Netmask</th>
+                                        <th>Broadcast</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="address in interface.addresses">
+                                            <td>{{address.family}}</td>
+                                            <td><code>{{address.addr}}</code></td>
+                                            <td><code>{{address.peer}}</code></td>
+                                            <td><code>{{address.netmask}}</code></td>
+                                            <td><code>{{address.broadcast}}</code></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div style="margin-top: 10px;" class="alert alert-info" ng-if="interface.addresses.length == 0">No address configured for interface '{{interface.name}}'.</div>
+                            </tab>
+                        </tabset>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
 </div>

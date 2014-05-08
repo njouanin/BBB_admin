@@ -1,7 +1,6 @@
-var BBBAdminTemplates = angular.module('BBBAdminTemplates', []);
+var BBBAdminApp = angular.module('BBBAdminApp');
 
-
-BBBAdminTemplates.run(["$templateCache", function($templateCache) {
+BBBAdminApp.run(["$templateCache", function($templateCache) {
   $templateCache.put("template/tabs/tab.html",
     "<li ng-class=\"{active: active, disabled: disabled}\">\n" +
     "  <a ng-click=\"select()\" tab-heading-transclude>{{heading}}</a>\n" +
@@ -9,14 +8,14 @@ BBBAdminTemplates.run(["$templateCache", function($templateCache) {
     "");
 }]);
 
-BBBAdminTemplates.run(["$templateCache", function($templateCache) {
+BBBAdminApp.run(["$templateCache", function($templateCache) {
   $templateCache.put("template/tabs/tabset-titles.html",
     "<ul class=\"nav {{type && 'nav-' + type}}\" ng-class=\"{'nav-stacked': vertical}\">\n" +
     "</ul>\n" +
     "");
 }]);
 
-BBBAdminTemplates.run(["$templateCache", function($templateCache) {
+BBBAdminApp.run(["$templateCache", function($templateCache) {
   $templateCache.put("template/tabs/tabset.html",
     "\n" +
     "<div>\n" +
