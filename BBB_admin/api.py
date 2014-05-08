@@ -6,10 +6,26 @@ import sys
 
 system_app = bottle.Bottle(catchall=False)
 
+@system_app.route('/uptime')
+def get_uptime():
+    from datetime import timedelta
+    try:
+        with open('/proc/uptime', 'r') as f:
+            uptime_seconds = float(f.readline().split()[0])
+            uptime_string = str(timedelta(seconds = uptime_seconds))
+    except Exception as e:
+        uptime_string='n/a (' + str(e) + ')'
+    return {'uptime':uptime_string}
+
 @system_app.route('/uname')
 def os_uname():
     uname = os.uname()
-    info = {'sysname': uname.sysname, 'nodename': uname.nodename, 'release': uname.release, 'version':uname.version, 'machine': uname.machine}
+    info = {
+        'sysname': uname.sysname, 
+        'nodename': uname.nodename, 
+        'release': uname.release, 
+        'version':uname.version, 
+        'machine': uname.machine}
     return info
 
 @system_app.route('/network')
