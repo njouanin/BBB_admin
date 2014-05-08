@@ -1,9 +1,9 @@
 var BBBAdminControllers = angular.module('BBBAdminControllers', []);
 
 BBBAdminControllers.controller('SystemUnameCtrl', ['$scope', '$http',
-  function ($scope, $http) {
-    $http.get('/api/system/uname').success(function(data) {
-      $scope.systemInfo = data;
+     function ($scope, $http) {
+        $http.get('/api/system/uname').success(function(data) {
+        $scope.systemInfo = data;
     });
   }]);
 

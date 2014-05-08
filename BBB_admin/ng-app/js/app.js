@@ -10,3 +10,4 @@ BBBAdminApp.config(['$routeProvider',
     $routeProvider.when('/board', {templateUrl: '/ng-app/partials/board.html',controller: 'BoardCtrl'});
     $routeProvider.otherwise({redirectTo: '/system'});
   }]);
+
